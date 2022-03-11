@@ -24,4 +24,4 @@ COPY . .
 
 
 # Build app and start server from script
-CMD ["/usr/src/dqshop/run"]
+CMD ["serve -s build"]
