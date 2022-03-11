@@ -12,7 +12,7 @@ const editAddress = async(payload: any) => {
 }
 
 const checkout = async(payload: any) => {
-	return await httpApi.post(`/transactions/checkout`, payload)
+	return await httpApi.post(`/transaction-service/transactions/checkout`, payload)
 }
 
 

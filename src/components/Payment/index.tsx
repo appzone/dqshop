@@ -21,7 +21,7 @@ const PaymentComponent = (props: any) => {
 			initialValues,
 			onSubmit: (values: any) => {
 				console.log('values on submit', values);
-				handleCheckout(values);
+				handleCheckout({ ...values, amount: total});
 			}
 		})
 
@@ -58,7 +58,7 @@ const PaymentComponent = (props: any) => {
 								</div>
 							</div>
 							<div>
-								<button type="button" className="btn btn-primary mb-2" onClick={() => handleCheckout()}>CHECKOUT</button>
+								<button type="submit" className="btn btn-primary mb-2">CHECKOUT</button>
 							</div>
 						</form>
 					</>

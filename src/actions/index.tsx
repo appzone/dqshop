@@ -75,7 +75,7 @@ const editAddress = (payload: any) => (dispatch: any) => {
 }
 
 const handleCheckout = (payload: any) => (dispatch: any) => {
-	console.log('handling checkout');
+	console.log('handling checkout' , payload);
 	dispatch({
 		type: types.CHECKOUT_REQUEST,
 		payload

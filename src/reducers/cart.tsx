@@ -123,8 +123,10 @@ export const reducer =
 				...state,
 				isLoading: false,
 				error: '',
-				transferDestination: 'aaa',
-				checkout : true
+				transferDestination: action.payload.transactionId,
+				checkout : true,
+				...sumItems([]),
+				cartItems: []
 			}
 		default:
 			return state;
@@ -186,10 +188,12 @@ export function* saga() {
 
 	yield takeEvery(CHECKOUT_REQUEST, function* checkoutRequest({ payload }: any): any {
 		try {
-			console.log('checkout');
+			console.log('checkout' , payload);
 			const data = yield call(checkout, payload);
+			console.log('data', data);
 			yield put({
-				type: CHECKOUT_SUCCESS
+				type: CHECKOUT_SUCCESS,
+				payload: data
 			})
 		} catch (error) {
 			console.log('error checkout ' , error);
