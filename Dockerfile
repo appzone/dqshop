@@ -20,8 +20,7 @@ RUN npm run build
 
 # Bundle app source
 COPY . .
-
-
+EXPOSE 3000
+ENTRYPOINT [ "serve", "-s", "build"]
 
 # Build app and start server from script
-CMD ["serve -s build"]
