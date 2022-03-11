@@ -22,7 +22,7 @@ const Callback = (props:any) => {
 			client_secret: 'T2noNhPBf4umIVh7iiwRkAO2tZe6E3Wm',
 			grant_type: 'authorization_code',
 			code: parsedVar.code,
-			redirect_uri: 'http://localhost:3000/callback'
+			redirect_uri: 'http://165.22.58.178:31989/callback'
 		}
 		httpClient.post('/auth/realms/DQLabLogin/protocol/openid-connect/token', qs.stringify(payload)).then((res) => {
 			console.log('access token is ', res.data.access_token );
